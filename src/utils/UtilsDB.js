@@ -22,10 +22,11 @@ export function firebaseConfig() {
 export async function firebaseLogin(email, password) {
     try {
         console.log("intentando login ", email)
-        let credenciales = await signInWithEmailAndPassword(getAuth(), email, password);
-        console.log(credenciales);
+        await signInWithEmailAndPassword(getAuth(), email, password);
     } catch (e) {
+        console.log("usuario o contraseña incorrecta")
         return false;
     }
+    console.log("login correcto")
     return true;
 }
