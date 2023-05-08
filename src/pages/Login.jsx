@@ -9,10 +9,10 @@ const Login = () => {
     return (
         <div >
             <label >Usuario:</label><br />
-            <input id="usuario" /> <br />
+            <input id="usuario"  /> <br />
             <label >contraseña:</label><br />
             <input id="contraseña" type="password" /> <br />
-            <button onClick={
+            <button  onClick={
                 async () => {
                     var usuario = document.getElementById('usuario').value;
                     var contraseña = document.getElementById('contraseña').value;
@@ -24,6 +24,9 @@ const Login = () => {
                     }
                     else {
                         console.log("false")
+                        alert("Usuario y/o Contraseña incorrecto")
+                        document.getElementById('usuario').value = "";
+                        document.getElementById('contraseña').value="";
                     }
 
                 }
